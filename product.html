@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Товар 1 — Учебный интернет-магазин">
+  <meta property="og:description" content="Страница товара учебного интернет-магазина.">
+  <meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подробное описание товара в учебном интернет-магазине.">
+  <title>Товар 1 — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ProGarden</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Товар 1</span>
+    </nav>
+
+    <article class="product">
+      <img
+        class="product__image"
+        src="https://placehold.co/600x600/0057b8/ffffff?text=Товар+1"
+        alt="Товар 1"
+        width="600"
+        height="600"
+      >
+
+      <div class="product__info">
+        <h1 class="product__title"></h1>
+        <p class="product__sku">Артикул: SP-001</p>
+        <p class="product__price">1000 руб.</p>
+
+        <p>
+          Краткое описание учебного товара. Здесь можно указать особенности,
+          материалы и другую полезную информацию для покупателя.
+        </p>
+
+        <p>
+          В наличии на складе. Доставка по всей России.
+        </p>
+
+        <button
+          class="button button--primary product-card__button"
+          type="button"
+          data-product="Товар 1"
+        >
+          Заказать
+        </button>
+
+        <p>
+          <a href="catalog.html">← Вернуться в каталог</a>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input type="hidden" id="selected-product" name="product">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input
+          class="order-form__input"
+          id="order-name"
+          name="name"
+          type="text"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input
+          class="order-form__input"
+          id="order-email"
+          name="email"
+          type="email"
+          required
+        >
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--secondary" type="button" id="close-order-dialog">
+          Закрыть
+        </button>
+        <button class="button button--primary" type="submit">
+          Отправить заявку
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <p class="success-message" id="success-message" hidden>
+    Форма успешно отправлена!
+  </p>
+</body>
+</html>
