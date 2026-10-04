@@ -1,3 +1,4 @@
+// Получаем модальное окно.
 const orderDialog = document.getElementById('order-dialog');
 
 // Получаем все кнопки заказа в карточках товаров.
@@ -9,6 +10,12 @@ const closeDialogButton = document.getElementById('close-order-dialog');
 // Получаем скрытое поле, в которое будет записан выбранный товар.
 const selectedProductInput = document.getElementById('selected-product');
 
+// Получаем форму заявки.
+const orderForm = document.getElementById('order-form');
+
+// Получаем сообщение об успешной отправке.
+const successMessage = document.getElementById('success-message');
+
 // Перебираем все кнопки «Заказать».
 orderButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -17,6 +24,9 @@ orderButtons.forEach((button) => {
 
     // Записываем название товара в скрытое поле формы.
     selectedProductInput.value = productName;
+
+    // Скрываем предыдущее сообщение об успешной отправке.
+    successMessage.hidden = true;
 
     // Открываем модальное окно.
     orderDialog.showModal();
@@ -27,12 +37,6 @@ orderButtons.forEach((button) => {
 closeDialogButton.addEventListener('click', () => {
   orderDialog.close();
 });
-
-// Получаем форму заявки.
-const orderForm = document.getElementById('order-form');
-
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
 
 // Обрабатываем отправку формы.
 orderForm.addEventListener('submit', (event) => {
