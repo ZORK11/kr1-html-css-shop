@@ -43,6 +43,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -51,8 +52,21 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
+main{
+    flex: 1 0 auto;
+}
+.hero{
+    background-image: url("https://avatars.mds.yandex.net/i?id=caa77cdc3bbaba5a5984eece926f1233_l-3311063-images-thumbs&n=13");
+  background-size: cover;        /* картинка растягивается на весь блок */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
 header,
 main,
 footer {
@@ -294,6 +308,11 @@ a:focus-visible {
   background-color: var(--color-primary);
 }
 
+footer{
+    margin-top: auto;
+    flex-shrink: 0;
+  margin-top: auto;
+}
 /* ===============================
    6. Прочие блоки страницы
    =============================== */
